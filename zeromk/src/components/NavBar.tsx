@@ -38,8 +38,8 @@ const Navbar = () => {
         </Link>
         <div className="hidden md:flex md:items-center">
           <w3m-button />
-          <Link href="/" className={`text-white px-4 py-2 ${pathname === "/" ? "underline" : "hover:text-teal-400"}`}>
-            Home
+          <Link href="/usmarkets" className={`text-white px-4 py-2 ${pathname === "/" ? "underline" : "hover:text-teal-400"}`}>
+            US Markets
           </Link>
           {/* External link to open the sentiments page */}
           <a
