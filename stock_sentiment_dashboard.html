@@ -1,0 +1,175 @@
+<h1>Stock Sentiment Dashboard</h1><h2>Last updated: 19/10/2024 11:26:18 (Timezone: India Standard Time)</h2>
+    <p>This dashboard shows sentiment analysis performed on the latest news headlines for major Indian stocks, as well as current stock prices and total stock value in the portfolio.</p>
+    <br>
+    
+    <script>
+    function searchTable() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("stockTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+            tr[i].style.display = "none";  // Hide all rows initially
+            td = tr[i].getElementsByTagName("td");
+            for (var j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";  // Show the row if any cell matches
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    </script>
+    
+    <label for="searchInput">Search Stock Ticker:</label>
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for tickers..">
+    
+    <table id="stockTable" border="1" style="width:100%">
+    <thead><tr>
+        <th>Ticker</th>
+        <th>Sector</th>
+        <th>Industry</th>
+        <th>Price</th>
+        <th>No. of Shares</th>
+        <th>Total Value</th>
+        <th>Sentiment Score</th>
+        <th>Negative</th>
+        <th>Neutral</th>
+        <th>Positive</th>
+    </tr></thead><tbody>
+    
+        <tr>
+            <td>RELIANCE.NS</td>
+            <td>Energy</td>
+            <td>Oil & Gas Refining & Marketing</td>
+            <td>2718.60009765625</td>
+            <td>10</td>
+            <td>27186.0009765625</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>TCS.NS</td>
+            <td>Technology</td>
+            <td>Information Technology Services</td>
+            <td>4123.0498046875</td>
+            <td>5</td>
+            <td>20615.2490234375</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>HDFC.NS</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>nan</td>
+            <td>8</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>INFY.NS</td>
+            <td>Technology</td>
+            <td>Information Technology Services</td>
+            <td>1879.5999755859375</td>
+            <td>7</td>
+            <td>13157.199829101562</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>HINDUNILVR.NS</td>
+            <td>Consumer Defensive</td>
+            <td>Household & Personal Products</td>
+            <td>2717.10009765625</td>
+            <td>6</td>
+            <td>16302.6005859375</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>ITC.NS</td>
+            <td>Consumer Defensive</td>
+            <td>Tobacco</td>
+            <td>486.70001220703125</td>
+            <td>4</td>
+            <td>1946.800048828125</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>SBIN.NS</td>
+            <td>Financial Services</td>
+            <td>Banks - Regional</td>
+            <td>820.4000244140625</td>
+            <td>9</td>
+            <td>7383.6002197265625</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>BHARTIARTL.NS</td>
+            <td>Communication Services</td>
+            <td>Telecom Services</td>
+            <td>1707.8499755859375</td>
+            <td>3</td>
+            <td>5123.5499267578125</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>TATAMOTORS.NS</td>
+            <td>Consumer Cyclical</td>
+            <td>Auto Manufacturers</td>
+            <td>910.1500244140625</td>
+            <td>5</td>
+            <td>4550.7501220703125</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        
+        <tr>
+            <td>ICICIBANK.NS</td>
+            <td>Financial Services</td>
+            <td>Banks - Regional</td>
+            <td>1264.5</td>
+            <td>2</td>
+            <td>2529.0</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+            <td>nan</td>
+        </tr>
+        </tbody></table><div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="b41f8f30-0426-4c34-bf28-5baa7716ca09" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("b41f8f30-0426-4c34-bf28-5baa7716ca09")) {                    Plotly.newPlot(                        "b41f8f30-0426-4c34-bf28-5baa7716ca09",                        [{"branchvalues":"total","customdata":[[2718.6,null,null,null,null],[4123.05,null,null,null,null],[null,null,null,null,null],[1879.6,null,null,null,null],[2717.1,null,null,null,null],[486.7,null,null,null,null],[820.4,null,null,null,null],[1707.85,null,null,null,null],[910.15,null,null,null,null],[1264.5,null,null,null,null]],"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"hovertemplate":"labels=%{label}\u003cbr\u003eTotal Stock Value=%{value}\u003cbr\u003eparent=%{parent}\u003cbr\u003eid=%{id}\u003cbr\u003ePrice=%{customdata[0]}\u003cbr\u003eNegative=%{customdata[1]}\u003cbr\u003eNeutral=%{customdata[2]}\u003cbr\u003ePositive=%{customdata[3]}\u003cbr\u003eSentiment Score=%{color}\u003cextra\u003e\u003c\u002fextra\u003e","ids":["Stocks\u002fCommunication Services\u002fTelecom Services\u002fBHARTIARTL.NS","Stocks\u002fN\u002fA\u002fN\u002fA\u002fHDFC.NS","Stocks\u002fConsumer Defensive\u002fHousehold & Personal Products\u002fHINDUNILVR.NS","Stocks\u002fFinancial Services\u002fBanks - Regional\u002fICICIBANK.NS","Stocks\u002fTechnology\u002fInformation Technology Services\u002fINFY.NS","Stocks\u002fConsumer Defensive\u002fTobacco\u002fITC.NS","Stocks\u002fEnergy\u002fOil & Gas Refining & Marketing\u002fRELIANCE.NS","Stocks\u002fFinancial Services\u002fBanks - Regional\u002fSBIN.NS","Stocks\u002fConsumer Cyclical\u002fAuto Manufacturers\u002fTATAMOTORS.NS","Stocks\u002fTechnology\u002fInformation Technology Services\u002fTCS.NS","Stocks\u002fConsumer Cyclical\u002fAuto Manufacturers","Stocks\u002fFinancial Services\u002fBanks - Regional","Stocks\u002fConsumer Defensive\u002fHousehold & Personal Products","Stocks\u002fTechnology\u002fInformation Technology Services","Stocks\u002fN\u002fA\u002fN\u002fA","Stocks\u002fEnergy\u002fOil & Gas Refining & Marketing","Stocks\u002fCommunication Services\u002fTelecom Services","Stocks\u002fConsumer Defensive\u002fTobacco","Stocks\u002fCommunication Services","Stocks\u002fConsumer Cyclical","Stocks\u002fConsumer Defensive","Stocks\u002fEnergy","Stocks\u002fFinancial Services","Stocks\u002fN\u002fA","Stocks\u002fTechnology","Stocks"],"labels":["BHARTIARTL.NS","HDFC.NS","HINDUNILVR.NS","ICICIBANK.NS","INFY.NS","ITC.NS","RELIANCE.NS","SBIN.NS","TATAMOTORS.NS","TCS.NS","Auto Manufacturers","Banks - Regional","Household & Personal Products","Information Technology Services","N\u002fA","Oil & Gas Refining & Marketing","Telecom Services","Tobacco","Communication Services","Consumer Cyclical","Consumer Defensive","Energy","Financial Services","N\u002fA","Technology","Stocks"],"marker":{"coloraxis":"coloraxis","colors":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"name":"","parents":["Stocks\u002fCommunication Services\u002fTelecom Services","Stocks\u002fN\u002fA\u002fN\u002fA","Stocks\u002fConsumer Defensive\u002fHousehold & Personal Products","Stocks\u002fFinancial Services\u002fBanks - Regional","Stocks\u002fTechnology\u002fInformation Technology Services","Stocks\u002fConsumer Defensive\u002fTobacco","Stocks\u002fEnergy\u002fOil & Gas Refining & Marketing","Stocks\u002fFinancial Services\u002fBanks - Regional","Stocks\u002fConsumer Cyclical\u002fAuto Manufacturers","Stocks\u002fTechnology\u002fInformation Technology Services","Stocks\u002fConsumer Cyclical","Stocks\u002fFinancial Services","Stocks\u002fConsumer Defensive","Stocks\u002fTechnology","Stocks\u002fN\u002fA","Stocks\u002fEnergy","Stocks\u002fCommunication Services","Stocks\u002fConsumer Defensive","Stocks","Stocks","Stocks","Stocks","Stocks","Stocks","Stocks",""],"values":[5123.5499267578125,0.0,16302.6005859375,2529.0,13157.199829101562,1946.800048828125,27186.0009765625,7383.6002197265625,4550.7501220703125,20615.2490234375,4550.7501220703125,9912.600219726562,16302.6005859375,33772.44885253906,0.0,27186.0009765625,5123.5499267578125,1946.800048828125,5123.5499267578125,4550.7501220703125,18249.400634765625,27186.0009765625,9912.600219726562,0.0,33772.44885253906,98794.75073242188],"type":"treemap","texttemplate":"%{label}\u003cbr\u003e%{customdata[4]}","textposition":"middle center"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"coloraxis":{"colorbar":{"title":{"text":"Sentiment Score"}},"colorscale":[[0.0,"#FF0000"],[0.5,"#000000"],[1.0,"#00FF00"]],"cmid":0},"legend":{"tracegroupgap":0},"margin":{"t":30,"l":10,"r":10,"b":10},"font":{"size":20}},                        {"responsive": true}                    )                };                            </script>        </div>
